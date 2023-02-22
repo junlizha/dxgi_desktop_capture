@@ -33,7 +33,7 @@ int main(int argc, char* argv[])
 
 	// set default config
 	RtlZeroMemory(&config, sizeof(config));
-	config.ShowCursor = 1;
+	config.ShowCursor = 0;
 	config.SizeMode = tagFrameSizeMode_AutoSize;
 
 #pragma region Define_All_Options
@@ -91,8 +91,8 @@ int main(int argc, char* argv[])
 			OPT_BOOL,
 			0,
 			1,
-			{ (void*)&(config.SizeMode) },
-			"show cursor visible in output image. Default is '1' (0:false, 1:true)",
+			{ (void*)&(config.ShowCursor) },
+			"show cursor visible in output image. Default is '0' (0:false, 1:true)",
 			"show_cursor"
 		},
 		{
